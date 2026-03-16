@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --focusflow-shadow: 0 24px 50px -24px rgba(15, 23, 42, 0.22);
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    body {
+        font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+        background:
+            radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
+            radial-gradient(circle at top right, rgba(96, 165, 250, 0.15), transparent 28%),
+            linear-gradient(180deg, #f8fbff 0%, #eef4ff 50%, #f8fafc 100%);
+    }
+}
+
+@layer components {
+    .focusflow-panel {
+        @apply rounded-[28px] border border-white/70 bg-white/80 shadow-[var(--focusflow-shadow)] backdrop-blur;
+    }
+
+    .focusflow-sidebar-shell {
+        @apply border border-white/70 bg-white/90 shadow-[var(--focusflow-shadow)] backdrop-blur;
+    }
+
+    .focusflow-nav-link {
+        @apply flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-600 transition duration-200 hover:bg-slate-100 hover:text-slate-900;
+    }
+
+    .focusflow-nav-link-active {
+        @apply bg-slate-900 text-white shadow-lg shadow-slate-900/20;
+    }
+
+    .focusflow-input {
+        @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-sky-300 focus:ring-4 focus:ring-sky-100;
+    }
+
+    .focusflow-textarea {
+        @apply focusflow-input min-h-[130px] resize-y;
+    }
+
+    .focusflow-select {
+        @apply focusflow-input appearance-none bg-[right_1rem_center] bg-no-repeat pr-11;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-size: 1rem;
+    }
+
+    .focusflow-primary-button {
+        @apply inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200;
+    }
+
+    .focusflow-secondary-button {
+        @apply inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-100;
+    }
+
+    .focusflow-icon-button {
+        @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-900 focus:outline-none focus:ring-4 focus:ring-slate-100;
+    }
+
+    .focusflow-badge {
+        @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em];
+    }
+
+    .focusflow-task-card {
+        @apply rounded-[26px] border border-slate-200/80 bg-white/90 p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/60;
+    }
+
+    .focusflow-task-card-completed {
+        @apply border-emerald-100 bg-emerald-50/70 text-slate-500;
+    }
+
+    .focusflow-task-toggle {
+        @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-slate-200 bg-white text-transparent transition duration-200 hover:border-sky-400 hover:text-sky-500;
+    }
+
+    .focusflow-task-toggle-complete {
+        @apply border-slate-900 bg-slate-900 text-white;
+    }
+
+    .focusflow-sidebar-label {
+        @apply text-xs font-bold uppercase tracking-[0.32em] text-slate-400;
+    }
+}
